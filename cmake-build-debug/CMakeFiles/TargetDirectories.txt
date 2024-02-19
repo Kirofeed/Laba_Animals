@@ -1,0 +1,4 @@
+C:/Users/drozh/CLionProjects/Laba_Animals/cmake-build-debug/CMakeFiles/Laba_Animals.dir
+C:/Users/drozh/CLionProjects/Laba_Animals/cmake-build-debug/CMakeFiles/test.dir
+C:/Users/drozh/CLionProjects/Laba_Animals/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/drozh/CLionProjects/Laba_Animals/cmake-build-debug/CMakeFiles/rebuild_cache.dir
