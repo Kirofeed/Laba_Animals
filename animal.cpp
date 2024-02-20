@@ -11,10 +11,9 @@
 using namespace std;
 
 
-
-owner* OwnerById(int id) {
+owner *OwnerById(int id) {
     auto vec = owner::Get_list_of_owners();
-    for (auto owner : vec) {
+    for (auto owner: vec) {
         if (owner->GetID() == id) {
             return owner;
         }
@@ -23,25 +22,24 @@ owner* OwnerById(int id) {
 
 string NameById(int id) {
     auto vec = owner::Get_list_of_owners();
-    for (auto owner : vec) {
+    for (auto owner: vec) {
         if (owner->GetID() == id) {
             return owner->GetName();
         }
     }
 }
 
-void CountSpeciesByName(string& name) {
+void CountSpeciesByName(string &name) {
     auto vec = animal::GetListOfAllAnimals();
     set<string> pets;
-    for (auto pet : vec) {
+    for (auto pet: vec) {
         if (pet->GetName() == name) {
             pets.emplace(pet->GetType());
         }
     }
     if (pets.size() > 1) {
         cout << pets.size() << " species have name \'" << name << "\'";
-    }
-    else if (pets.size() == 1) {
+    } else if (pets.size() == 1) {
         cout << pets.size() << " species has name \'" << name << "\'";
     } else {
         cout << "Nobody has name \'" << name << "\'";
@@ -50,13 +48,12 @@ void CountSpeciesByName(string& name) {
 };
 
 
-
 void CountDifferentTypesOfSAnimalsForEveryOwner() {
     auto vec = owner::Get_list_of_owners();
     for (const auto owner: vec) {
         set<string> dif_types;
         auto collection = owner->Get_list_of_animals();
-        for (auto pet : collection) {
+        for (auto pet: collection) {
             dif_types.emplace(pet->GetType());
         }
         if (dif_types.size() != 1) {
@@ -67,13 +64,14 @@ void CountDifferentTypesOfSAnimalsForEveryOwner() {
     }
     cout << "\n";
 }
-void AllOwnersOfType(string& type) {
+
+void AllOwnersOfType(string &type) {
     bool SomebodyHas = false;
     auto vec = owner::Get_list_of_owners();
-    for (const auto owner: vec){
+    for (const auto owner: vec) {
         vector<string> names_of_type;
         auto collection = owner->Get_list_of_animals();
-        for (auto pet : collection) {
+        for (auto pet: collection) {
             if (pet->GetType() == type) {
                 names_of_type.push_back(pet->GetName());
             }
@@ -93,6 +91,47 @@ void AllOwnersOfType(string& type) {
     }
     cout << "\n";
 }
+
+void Oldest_Youngest() {
+    auto vec = animal::GetListOfAllAnimals();
+    set<string> types;
+    // Collect all unique types of animals
+    for (auto pet : vec) {
+        types.emplace(pet->GetType());
+    }
+
+    // Iterate over each type of animal
+    for (auto type : types) {
+        animal* oldest = nullptr;
+        animal* youngest = nullptr;
+        int maxAge = INT_MIN; // Initializing with the minimum possible value
+        int minAge = INT_MAX; // Initializing with the maximum possible value
+
+        // Find the oldest and youngest animal for the current type
+        for (auto pet : vec) {
+            if (pet->GetType() == type) {
+                if (pet->GetAge() > maxAge) {
+                    maxAge = pet->GetAge();
+                    oldest = pet;
+                }
+                if (pet->GetAge() < minAge) {
+                    minAge = pet->GetAge();
+                    youngest = pet;
+                }
+            }
+        }
+
+        // Print information about the oldest and youngest animal for the current type
+        if (oldest != nullptr && youngest != nullptr) {
+            cout << "Type: " << type << endl;
+            cout << "Oldest: " << oldest->GetName() << " (Age: " << oldest->GetAge() << ")" << endl;
+            cout << "Youngest: " << youngest->GetName() << " (Age: " << youngest->GetAge() << ")" << endl;
+        }
+    }
+    cout << endl;
+}
+
+
 
 void Menu() {
     cout << "\tEnter number of option:\n"
@@ -125,7 +164,7 @@ void Menu() {
         CountSpeciesByName(name);
         Menu();
     } else if (chosen_num == 4) {
-
+        Oldest_Youngest();
         Menu();
     } else if (chosen_num == 5) {
         return;
@@ -134,14 +173,11 @@ void Menu() {
 }
 
 
-
-
-
-owner* OwnersAreSame( string& name, string& telephoneNumber,
-                    string& adress, int& age) {
-    for (auto it : owner::list_of_owners) {
+owner *OwnersAreSame(string &name, string &telephoneNumber,
+                     string &adress, int &age) {
+    for (auto it: owner::list_of_owners) {
         if (name == it->name && adress == it->adress &&
-        telephoneNumber == it->telephoneNumber && age == it->age) {
+            telephoneNumber == it->telephoneNumber && age == it->age) {
             return it;
         }
     }
@@ -149,7 +185,7 @@ owner* OwnersAreSame( string& name, string& telephoneNumber,
 }
 
 
-void ProcessString(string& line){
+void ProcessString(string &line) {
     string name;
     string telephoneNumber;
     string adress;
@@ -197,8 +233,8 @@ void ProcessString(string& line){
         line.erase(0, 1);
     }
 
-    owner* new_owner = OwnersAreSame(name, telephoneNumber, adress, age);
-    if(new_owner == nullptr){
+    owner *new_owner = OwnersAreSame(name, telephoneNumber, adress, age);
+    if (new_owner == nullptr) {
         new_owner = new owner(name, telephoneNumber, adress, age);
         owner::list_of_owners.push_back(new_owner);
     }
@@ -291,7 +327,7 @@ void ProcessString(string& line){
 
     delim = line.find(';');
     if (delim > line.size() && !line.empty()) {
-       special = line;
+        special = line;
     } else {
         if (delim == 0) {
             line.erase(0, 1);
@@ -309,22 +345,19 @@ void ProcessString(string& line){
 
 
     if (type == "cat") {
-        animal* new_pet = new cat(name, age, sex, breed, new_owner->id, special);
+        animal *new_pet = new cat(name, age, sex, breed, new_owner->id, special);
         new_owner->add_pet(new_pet);
         animal::all_animals.push_back(new_pet);
-    }
-    else if (type == "dog") {
-        animal* new_pet = new dog(name, age, sex, breed, new_owner->id, special);
+    } else if (type == "dog") {
+        animal *new_pet = new dog(name, age, sex, breed, new_owner->id, special);
         new_owner->add_pet(new_pet);
         animal::all_animals.push_back(new_pet);
-    }
-    else if (type == "parrot") {
-        animal* new_pet = new parrot(name, age, sex, breed, new_owner->id, special);
+    } else if (type == "parrot") {
+        animal *new_pet = new parrot(name, age, sex, breed, new_owner->id, special);
         new_owner->add_pet(new_pet);
         animal::all_animals.push_back(new_pet);
-    }
-    else if (type == "fish") {
-        animal* new_pet = new fish(name, age, sex, breed, new_owner->id, special);
+    } else if (type == "fish") {
+        animal *new_pet = new fish(name, age, sex, breed, new_owner->id, special);
         new_owner->add_pet(new_pet);
         animal::all_animals.push_back(new_pet);
     }
@@ -336,20 +369,20 @@ void ReadDataFromFile() {
         cerr << "problems with opening file" << endl;
     }
     string line;
-    while(getline(in, line)) {
+    while (getline(in, line)) {
         ProcessString(line);
     }
     in.close();
 }
 
 int animal::count = 0;
-vector<animal*> animal::all_animals;
+vector<animal *> animal::all_animals;
 
-vector<animal*> animal::GetListOfAllAnimals() {
+vector<animal *> animal::GetListOfAllAnimals() {
     return all_animals;
 }
 
-string cat::MakeSound()  {
+string cat::MakeSound() {
     return "meow";
 }
 
@@ -370,7 +403,7 @@ string cat::GetName() {
 }
 
 
-string dog::MakeSound()  {
+string dog::MakeSound() {
     return "woof";
 }
 
@@ -391,7 +424,7 @@ string dog::GetName() {
 }
 
 
-string parrot::MakeSound()  {
+string parrot::MakeSound() {
     return "tweet";
 }
 
@@ -412,7 +445,7 @@ string parrot::GetName() {
 }
 
 
-string fish::MakeSound()  {
+string fish::MakeSound() {
     return "gurgle";
 }
 
@@ -433,13 +466,14 @@ string fish::GetName() {
 }
 
 
-void owner::add_pet(animal * pet) {
+void owner::add_pet(animal *pet) {
     animal_collection.push_back(pet);
 }
-vector<owner*> owner::list_of_owners;
+
+vector<owner *> owner::list_of_owners;
 int owner::count = 0;
 
-vector<owner*> owner::Get_list_of_owners() {
+vector<owner *> owner::Get_list_of_owners() {
     return list_of_owners;
 }
 
@@ -451,7 +485,7 @@ int owner::GetID() {
     return this->id;
 }
 
-vector<animal*> owner::Get_list_of_animals() {
+vector<animal *> owner::Get_list_of_animals() {
     return this->animal_collection;
 }
 
