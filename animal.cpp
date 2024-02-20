@@ -11,6 +11,7 @@
 using namespace std;
 
 
+
 owner *OwnerById(int id) {
     auto vec = owner::Get_list_of_owners();
     for (auto owner: vec) {
@@ -28,6 +29,20 @@ string NameById(int id) {
         }
     }
 }
+
+void MakeOutFile() {
+    ofstream out("output.txt");
+    if (!out.is_open()) {
+        cerr << "problem with creating output file" << endl;
+    }
+    auto vec = animal::GetListOfAllAnimals();
+    for (auto pet : vec) {
+        owner* owner = OwnerById(pet->GetOwnerId());
+        out << owner->GetName()<< "; " << owner->GetTelephoneNum() << "; " << owner->GetAdress() << "; " <<
+        owner->GetAge() << "; " << pet->GetType() << "; " << pet->GetName() << "; " << pet->GetAge() << "; ";
+    }
+}
+
 
 void CountSpeciesByName(string &name) {
     auto vec = animal::GetListOfAllAnimals();
@@ -95,19 +110,16 @@ void AllOwnersOfType(string &type) {
 void Oldest_Youngest() {
     auto vec = animal::GetListOfAllAnimals();
     set<string> types;
-    // Collect all unique types of animals
     for (auto pet : vec) {
         types.emplace(pet->GetType());
     }
 
-    // Iterate over each type of animal
     for (auto type : types) {
         animal* oldest = nullptr;
         animal* youngest = nullptr;
-        int maxAge = INT_MIN; // Initializing with the minimum possible value
-        int minAge = INT_MAX; // Initializing with the maximum possible value
+        int maxAge = INT_MIN;
+        int minAge = INT_MAX;
 
-        // Find the oldest and youngest animal for the current type
         for (auto pet : vec) {
             if (pet->GetType() == type) {
                 if (pet->GetAge() > maxAge) {
@@ -121,7 +133,6 @@ void Oldest_Youngest() {
             }
         }
 
-        // Print information about the oldest and youngest animal for the current type
         if (oldest != nullptr && youngest != nullptr) {
             cout << "Type: " << type << endl;
             cout << "Oldest: " << oldest->GetName() << " (Age: " << oldest->GetAge() << ")" << endl;
@@ -481,8 +492,20 @@ string owner::GetName() {
     return this->name;
 }
 
-int owner::GetID() {
+int owner::GetID() const {
     return this->id;
+}
+
+int owner::GetAge() const {
+    return this->age;
+}
+
+string owner::GetTelephoneNum() {
+    return this->telephoneNumber;
+}
+
+string owner::GetAdress() {
+    return this->adress;
 }
 
 vector<animal *> owner::Get_list_of_animals() {

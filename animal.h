@@ -188,7 +188,13 @@ public:
 
     string GetName();
 
-    int GetID();
+    string GetTelephoneNum();
+
+    string GetAdress();
+
+    int GetID() const;
+
+    int GetAge() const;
 
 private:
     static vector<owner *> list_of_owners;
