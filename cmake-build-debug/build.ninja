@@ -55,6 +55,30 @@ build CMakeFiles/Laba_Animals.dir/main.cpp.obj: CXX_COMPILER__Laba_Animals_unsca
   OBJECT_DIR = CMakeFiles\Laba_Animals.dir
   OBJECT_FILE_DIR = CMakeFiles\Laba_Animals.dir
 
+build CMakeFiles/Laba_Animals.dir/dog.cpp.obj: CXX_COMPILER__Laba_Animals_unscanned_Debug C$:/Users/drozh/CLionProjects/Laba_Animals/dog.cpp || cmake_object_order_depends_target_Laba_Animals
+  DEP_FILE = CMakeFiles\Laba_Animals.dir\dog.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Laba_Animals.dir
+  OBJECT_FILE_DIR = CMakeFiles\Laba_Animals.dir
+
+build CMakeFiles/Laba_Animals.dir/cat.cpp.obj: CXX_COMPILER__Laba_Animals_unscanned_Debug C$:/Users/drozh/CLionProjects/Laba_Animals/cat.cpp || cmake_object_order_depends_target_Laba_Animals
+  DEP_FILE = CMakeFiles\Laba_Animals.dir\cat.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Laba_Animals.dir
+  OBJECT_FILE_DIR = CMakeFiles\Laba_Animals.dir
+
+build CMakeFiles/Laba_Animals.dir/parrot.cpp.obj: CXX_COMPILER__Laba_Animals_unscanned_Debug C$:/Users/drozh/CLionProjects/Laba_Animals/parrot.cpp || cmake_object_order_depends_target_Laba_Animals
+  DEP_FILE = CMakeFiles\Laba_Animals.dir\parrot.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Laba_Animals.dir
+  OBJECT_FILE_DIR = CMakeFiles\Laba_Animals.dir
+
+build CMakeFiles/Laba_Animals.dir/fish.cpp.obj: CXX_COMPILER__Laba_Animals_unscanned_Debug C$:/Users/drozh/CLionProjects/Laba_Animals/fish.cpp || cmake_object_order_depends_target_Laba_Animals
+  DEP_FILE = CMakeFiles\Laba_Animals.dir\fish.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Laba_Animals.dir
+  OBJECT_FILE_DIR = CMakeFiles\Laba_Animals.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Laba_Animals
@@ -63,7 +87,7 @@ build CMakeFiles/Laba_Animals.dir/main.cpp.obj: CXX_COMPILER__Laba_Animals_unsca
 #############################################
 # Link the executable Laba_Animals.exe
 
-build Laba_Animals.exe: CXX_EXECUTABLE_LINKER__Laba_Animals_Debug CMakeFiles/Laba_Animals.dir/main.cpp.obj
+build Laba_Animals.exe: CXX_EXECUTABLE_LINKER__Laba_Animals_Debug CMakeFiles/Laba_Animals.dir/main.cpp.obj CMakeFiles/Laba_Animals.dir/dog.cpp.obj CMakeFiles/Laba_Animals.dir/cat.cpp.obj CMakeFiles/Laba_Animals.dir/parrot.cpp.obj CMakeFiles/Laba_Animals.dir/fish.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Laba_Animals.dir

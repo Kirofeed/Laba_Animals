@@ -1,7 +1,7 @@
 //
 // Created by drozh on 20.02.2024.
 //
-
+#pragma once
 #ifndef LABA_ANIMALS_ANIMAL_H
 #define LABA_ANIMALS_ANIMAL_H
 
@@ -9,13 +9,14 @@
 #include <utility>
 #include <vector>
 
+
 using namespace std;
 
 class animal {
     friend void ProcessString(string &line);
 
 public:
-    virtual string MakeSound() = 0;
+    [[maybe_unused]] virtual string MakeSound() = 0;
 
     virtual string GetType() = 0;
 
@@ -50,7 +51,7 @@ protected:
 
 private:
 
-    int pet_id;
+    [[maybe_unused]] int pet_id;
 
     static int count;
 
@@ -58,105 +59,15 @@ private:
 };
 
 
-class cat : public animal {
-public:
-    cat(string name, int age, string sex, string breed, int owner_id, string fur_type) :
-            animal(std::move(name), age, std::move(sex), std::move(breed), owner_id), fur_type(std::move(fur_type)),
-            type("cat") {}
-
-    ~cat() override = default;
-
-    string MakeSound() override;
-
-    string GetType() override;
-
-    string GetName() override;
-
-    int GetAge() override;
-
-    int GetOwnerId() override;
-
-private:
-
-    string fur_type;
-
-    string type;
-};
 
 
-class dog : public animal {
-public:
-    dog(string name, int age, string sex, string breed, int owner_id, string knowledge_of_commands) :
-            animal(std::move(name), age, std::move(sex), std::move(breed), owner_id),
-            knowledge_of_commands(std::move(knowledge_of_commands)), type("dog") {}
-
-    ~dog() override = default;
-
-    string MakeSound() override;
-
-    string GetName() override;
-
-    int GetAge() override;
-
-    string GetType() override;
-
-    int GetOwnerId() override;
-
-private:
-    string knowledge_of_commands;
-
-    string type;
-};
 
 
-class parrot : public animal {
-public:
-    parrot(string name, int age, string sex, string breed, int owner_id, string ability_to_speak) :
-            animal(std::move(name), age, std::move(sex), std::move(breed), owner_id),
-            ability_to_speak(std::move(ability_to_speak)), type("parrot") {}
-
-    ~parrot() override = default;
-
-    string MakeSound() override;
-
-    string GetName() override;
-
-    int GetAge() override;
-
-    string GetType() override;
-
-    int GetOwnerId() override;
-
-private:
-    string ability_to_speak;
-
-    string type;
-};
 
 
-class fish : public animal {
-public:
-    fish(string name, int age, string sex, string breed, int owner_id, string food_behavior) :
-            animal(std::move(name), age, std::move(sex), std::move(breed), owner_id),
-            food_behavior(std::move(food_behavior)), type("fish") {}
 
-    ~fish() override = default;
 
-    string MakeSound() override;
 
-    string GetName() override;
-
-    int GetAge() override;
-
-    string GetType() override;
-
-    int GetOwnerId() override;
-
-private:
-    string food_behavior;
-
-    string type;
-};
 
 
 //done
@@ -192,9 +103,9 @@ public:
 
     string GetAdress();
 
-    int GetID() const;
+    [[nodiscard]] int GetID() const;
 
-    int GetAge() const;
+    [[nodiscard]] int GetAge() const;
 
 private:
     static vector<owner *> list_of_owners;

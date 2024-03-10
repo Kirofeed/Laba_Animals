@@ -1,4 +1,4 @@
-#include "animal.cpp"
+#include "func.cpp"
 #include <iostream>
 #include <fstream>
 
