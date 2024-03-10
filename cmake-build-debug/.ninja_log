@@ -1,10 +1,12 @@
 # ninja log v5
-7	1117	7317843043582901	CMakeFiles/Laba_Animals.dir/main.cpp.obj	87b28aee344c859b
+3	1136	7317917652800294	CMakeFiles/Laba_Animals.dir/main.cpp.obj	87b28aee344c859b
 713	812	7300780168611473	test.exe	8b2727d82b480f9a
-1118	1281	7317843045195386	Laba_Animals.exe	58fcdcd7ef5f9583
+1136	1326	7317917654675632	Laba_Animals.exe	8d2abe84bb5ae221
+1292	2561	7317916179361333	CMakeFiles/Laba_Animals.dir/parrot.cpp.obj	361dfadec55fab17
 3	712	7300780167677616	CMakeFiles/test.dir/test.cpp.obj	84d51ad9db4f2226
-3	642	7317843038841797	CMakeFiles/Laba_Animals.dir/dog.cpp.obj	797c5c400f6deede
+7	1922	7317916172044112	CMakeFiles/Laba_Animals.dir/dog.cpp.obj	797c5c400f6deede
 3	170	7298670124240973	CMakeFiles/Laba_Animals.dir/animal.cpp.obj	41c9ee4737d90029
-1	158	7317853543366885	build.ninja	cfe44633d0228490
+1	158	7317918227408070	build.ninja	cfe44633d0228490
 3	665	7317814086965541	CMakeFiles/Laba_Animals.dir/func.cpp.obj	3d065e8c35408a3e
-5	642	7317843038831791	CMakeFiles/Laba_Animals.dir/cat.cpp.obj	7cd72b428811d2d0
+9	1983	7317916173589492	CMakeFiles/Laba_Animals.dir/cat.cpp.obj	7cd72b428811d2d0
+11	1292	7317916166699960	CMakeFiles/Laba_Animals.dir/fish.cpp.obj	41c8652097642900

@@ -1,8 +1,8 @@
 #include "animal.h"
 #include "cat.h"
 #include "dog.h"
-//#include "parrot.h"
-//#include "fish.h"
+#include "parrot.h"
+#include "fish.h"
 #include "animal.cpp"
 #include <fstream>
 #include <sstream>
