@@ -2,8 +2,7 @@
 // Created by drozh on 20.02.2024.
 //
 #pragma once
-#ifndef LABA_ANIMALS_ANIMAL_H
-#define LABA_ANIMALS_ANIMAL_H
+
 
 #include <iostream>
 #include <utility>
@@ -16,6 +15,7 @@ class animal {
     friend void ProcessString(string &line);
 
 public:
+    
     [[maybe_unused]] virtual string MakeSound() = 0;
 
     virtual string GetType() = 0;
@@ -25,6 +25,10 @@ public:
     virtual int GetAge() = 0;
 
     virtual int GetOwnerId() = 0;
+
+    animal* operator = (const animal* other);
+
+    animal* operator = (animal&& other);
 
     static vector<animal *> GetListOfAllAnimals();
 
@@ -126,4 +130,3 @@ private:
 };
 //done
 
-#endif //LABA_ANIMALS_ANIMAL_H

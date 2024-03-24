@@ -12,6 +12,12 @@ string fish::GetType() {
     return this->type;
 }
 
+fish* fish::operator=(fish* other) {
+    animal::operator=(other);
+    food_behavior = other->food_behavior;
+    return this;
+}
+
 int fish::GetOwnerId() {
     return this->owner_id;
 }

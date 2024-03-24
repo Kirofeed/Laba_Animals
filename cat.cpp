@@ -6,6 +6,11 @@ string cat::MakeSound() {
 int cat::GetAge() {
     return age;
 }
+cat* cat::operator=(cat* other) {
+    animal::operator=(other);
+    fur_type = other->fur_type;
+    return this;
+}
 
 string cat::GetType() {
     return this->type;

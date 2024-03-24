@@ -1,0 +1,9 @@
+# ninja log v5
+2	470	1710221546399488135	CMakeFiles/test.dir/test.cpp.o	42d9ad39f14f1ef7
+3	515	1710320458770525822	CMakeFiles/Laba_Animals.dir/main.cpp.o	cc3ab17bf6aad17e
+4	536	1710320419137999414	CMakeFiles/Laba_Animals.dir/cat.cpp.o	ed3a97565a375a1
+4	535	1710320419138033664	CMakeFiles/Laba_Animals.dir/fish.cpp.o	44f211229e32b646
+474	542	1710221546469334258	test	d013843641fa40eb
+4	536	1710320419138011664	CMakeFiles/Laba_Animals.dir/parrot.cpp.o	3b0d45168a17ece1
+3	536	1710320419137998706	CMakeFiles/Laba_Animals.dir/dog.cpp.o	615c36c5790d6a4f
+515	626	1710320458880944652	Laba_Animals	5fc7d1d2f36d5fae

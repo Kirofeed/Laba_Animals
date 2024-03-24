@@ -1,0 +1,4 @@
+/Users/kirilldrozhzha/proga/Laba_Animals/build/CMakeFiles/Laba_Animals.dir
+/Users/kirilldrozhzha/proga/Laba_Animals/build/CMakeFiles/test.dir
+/Users/kirilldrozhzha/proga/Laba_Animals/build/CMakeFiles/edit_cache.dir
+/Users/kirilldrozhzha/proga/Laba_Animals/build/CMakeFiles/rebuild_cache.dir

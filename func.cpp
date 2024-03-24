@@ -1,4 +1,5 @@
 #include "animal.h"
+#include "fabric.h"
 #include "cat.h"
 #include "dog.h"
 #include "parrot.h"
@@ -318,21 +319,25 @@ void ProcessString(string &line) {
 
 
     if (type == "cat") {
-        animal *new_pet = new cat(name, age, sex, breed, new_owner->id, special);
-        new_owner->add_pet(new_pet);
-        animal::all_animals.push_back(new_pet);
+        CatFabric createCat;
+        animal* cat = createCat.Create(name, age, sex, breed, new_owner->id, special);
+        new_owner->add_pet(cat);
+        animal::all_animals.push_back(cat);
     } else if (type == "dog") {
-        animal *new_pet = new dog(name, age, sex, breed, new_owner->id, special);
-        new_owner->add_pet(new_pet);
-        animal::all_animals.push_back(new_pet);
+        DogFabric createDog;
+        animal* dog = createDog.Create(name, age, sex, breed, new_owner->id, special);
+        new_owner->add_pet(dog);
+        animal::all_animals.push_back(dog);
     } else if (type == "parrot") {
-        animal *new_pet = new parrot(name, age, sex, breed, new_owner->id, special);
-        new_owner->add_pet(new_pet);
-        animal::all_animals.push_back(new_pet);
+        ParrotFabric createParrot;
+        animal* parrot = createParrot.Create(name, age, sex, breed, new_owner->id, special);
+        new_owner->add_pet(parrot);
+        animal::all_animals.push_back(parrot);
     } else if (type == "fish") {
-        animal *new_pet = new fish(name, age, sex, breed, new_owner->id, special);
-        new_owner->add_pet(new_pet);
-        animal::all_animals.push_back(new_pet);
+        FishFabric createParrot;
+        animal* parrot = createParrot.Create(name, age, sex, breed, new_owner->id, special);
+        new_owner->add_pet(parrot);
+        animal::all_animals.push_back(parrot);
     }
 }
 
@@ -368,6 +373,7 @@ void Menu() {
         case 1: {
             CountDifferentTypesOfSAnimalsForEveryOwner();
             Menu();
+            break;
             }
         case 2 : {
             string type;
@@ -375,6 +381,7 @@ void Menu() {
             cin >> type;
             AllOwnersOfType(type);
             Menu();
+            break;
         }
         case 3: {
             string name;
@@ -382,17 +389,21 @@ void Menu() {
             cin >> name;
             CountSpeciesByName(name);
             Menu();
+            break;
         }
         case 4: {
             Oldest_Youngest();
             Menu();
+            break;
         }
         case 5: {
             return;
+            break;
         }
         default: {
             cout << "incorrect input" << endl;
             Menu();
+            break;
         }
     }
 

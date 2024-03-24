@@ -1,11 +1,7 @@
 //
 // Created by drozh on 10.03.2024.
 //
-
-#ifndef LABA_ANIMALS_CAT_H
-#define LABA_ANIMALS_CAT_H
-
-#endif //LABA_ANIMALS_CAT_H
+#pragma once
 
 #include <string>
 #include "animal.h"
@@ -23,7 +19,9 @@ public:
 
     string MakeSound() override;
 
-    string GetType() override;
+    cat* operator=(cat* other);
+
+    string GetType() override;                                                                         
 
     string GetName() override;
 

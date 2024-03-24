@@ -1,0 +1,3 @@
+John; 55800; Minsk; 20; cat; kit; 2; male;; soft
+Mary; 20500; Aachen; 22; dog; pun; 3; male;; bad
+vit; 222041; Brest; 45; fish;; 1;;; good

@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/Users/kirilldrozhzha/proga/Laba_Animals/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/Laba_Animals.dir/main.cpp.o -c /Users/kirilldrozhzha/proga/Laba_Animals/main.cpp",
+  "file": "/Users/kirilldrozhzha/proga/Laba_Animals/main.cpp",
+  "output": "CMakeFiles/Laba_Animals.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/kirilldrozhzha/proga/Laba_Animals/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/Laba_Animals.dir/dog.cpp.o -c /Users/kirilldrozhzha/proga/Laba_Animals/dog.cpp",
+  "file": "/Users/kirilldrozhzha/proga/Laba_Animals/dog.cpp",
+  "output": "CMakeFiles/Laba_Animals.dir/dog.cpp.o"
+},
+{
+  "directory": "/Users/kirilldrozhzha/proga/Laba_Animals/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/Laba_Animals.dir/cat.cpp.o -c /Users/kirilldrozhzha/proga/Laba_Animals/cat.cpp",
+  "file": "/Users/kirilldrozhzha/proga/Laba_Animals/cat.cpp",
+  "output": "CMakeFiles/Laba_Animals.dir/cat.cpp.o"
+},
+{
+  "directory": "/Users/kirilldrozhzha/proga/Laba_Animals/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/Laba_Animals.dir/parrot.cpp.o -c /Users/kirilldrozhzha/proga/Laba_Animals/parrot.cpp",
+  "file": "/Users/kirilldrozhzha/proga/Laba_Animals/parrot.cpp",
+  "output": "CMakeFiles/Laba_Animals.dir/parrot.cpp.o"
+},
+{
+  "directory": "/Users/kirilldrozhzha/proga/Laba_Animals/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/Laba_Animals.dir/fish.cpp.o -c /Users/kirilldrozhzha/proga/Laba_Animals/fish.cpp",
+  "file": "/Users/kirilldrozhzha/proga/Laba_Animals/fish.cpp",
+  "output": "CMakeFiles/Laba_Animals.dir/fish.cpp.o"
+},
+{
+  "directory": "/Users/kirilldrozhzha/proga/Laba_Animals/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++2b -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/test.dir/test.cpp.o -c /Users/kirilldrozhzha/proga/Laba_Animals/test.cpp",
+  "file": "/Users/kirilldrozhzha/proga/Laba_Animals/test.cpp",
+  "output": "CMakeFiles/test.dir/test.cpp.o"
+}
+]

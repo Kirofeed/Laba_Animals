@@ -12,6 +12,12 @@ string parrot::GetType() {
     return this->type;
 }
 
+parrot* parrot::operator=(parrot* other) {
+    animal::operator=(other);
+    ability_to_speak = other->ability_to_speak;
+    return this;
+}
+
 int parrot::GetOwnerId() {
     return this->owner_id;
 }

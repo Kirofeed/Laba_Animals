@@ -1,11 +1,7 @@
 //
 // Created by drozh on 10.03.2024.
 //
-
-#ifndef LABA_ANIMALS_DOG_H
-#define LABA_ANIMALS_DOG_H
-
-#endif //LABA_ANIMALS_DOG_H]
+#pragma once
 
 #include <string>
 #include "animal.h"
@@ -24,6 +20,7 @@ public:
     string GetName() override;
 
     int GetAge() override;
+    dog* operator=(dog* other);
 
     string GetType() override;
 

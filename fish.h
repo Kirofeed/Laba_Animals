@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include "animal.h"
 
@@ -14,6 +15,8 @@ public:
     string GetName() override;
 
     int GetAge() override;
+
+    fish* operator=(fish* other);
 
     string GetType() override;
 
